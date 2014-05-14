@@ -1,0 +1,11 @@
+{
+    "name": "e2e-auth",
+    "version": "0.1.0",
+    "main": "lib/index.js",
+    "dependencies": {
+        "passport": "0.2.0",
+        "passport-oauth2": "1.1.2",
+        "passport-http-bearer": "1.0.1",
+        "async": "0.8.0"
+    }
+}
