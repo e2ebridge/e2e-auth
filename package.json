@@ -6,6 +6,7 @@
         "passport": "0.2.0",
         "passport-oauth2": "1.1.2",
         "passport-http-bearer": "1.0.1",
-        "async": "0.8.0"
+        "async": "0.8.0",
+        "node-rest-client": "0.8.6"
     }
 }
