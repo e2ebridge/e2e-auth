@@ -1,30 +1,30 @@
 {
-    "name": "e2e-auth",
-    "version": "0.1.0",
-    "description": "Authentication and authorization module using E2E Auth Server.",
-    "keywords": [
-        "e2e",
-        "auth",
-        "authentication",
-        "authorization",
-        "user",
-        "role"
-    ],
-    "author": {
-        "name": "E2E Technologies Ltd",
-        "email": "support@e2ebridge.com"
-    },
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/e2ebridge/e2e-auth.git"
-    },
-    "main": "./lib/index.js",
-    "dependencies": {
-        "passport": "0.2.0",
-        "passport-oauth2": "1.1.2",
-        "passport-http-bearer": "1.0.1",
-        "async": "0.8.0",
-        "node-rest-client": "0.8.6"
-    }
+  "name": "e2e-auth",
+  "version": "0.1.0",
+  "description": "Authentication and authorization module using E2E Auth Server.",
+  "keywords": [
+    "e2e",
+    "auth",
+    "authentication",
+    "authorization",
+    "user",
+    "role"
+  ],
+  "author": {
+    "name": "E2E Technologies Ltd",
+    "email": "support@e2ebridge.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/e2ebridge/e2e-auth.git"
+  },
+  "main": "./lib/index.js",
+  "dependencies": {
+    "passport": "0.2.0",
+    "passport-oauth2": "1.1.2",
+    "passport-http-bearer": "1.0.1",
+    "async": "0.8.0",
+    "node-rest-client": "0.8.6"
+  }
 }
