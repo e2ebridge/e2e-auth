@@ -1,7 +1,25 @@
 {
     "name": "e2e-auth",
     "version": "0.1.0",
-    "main": "lib/index.js",
+    "description": "Authentication and authorization module using E2E Auth Server.",
+    "keywords": [
+        "e2e",
+        "auth",
+        "authentication",
+        "authorization",
+        "user",
+        "role"
+    ],
+    "author": {
+        "name": "E2E Technologies Ltd",
+        "email": "support@e2ebridge.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/e2ebridge/e2e-auth.git"
+    },
+    "main": "./lib/index.js",
     "dependencies": {
         "passport": "0.2.0",
         "passport-oauth2": "1.1.2",
