@@ -82,3 +82,20 @@ This module works with the E2E Auth Server and provide a simple authentication a
             ...
         });
     });
+
+## Mock User
+
+During development or tests it can be interesting to mock the user. This is done using the mockup option attribute. If it is defined the user returned is always the one defined in.
+
+    var e2eAuth = new E2EAuth({
+        e2eAuthServerURL: 'http://e2e-auth.example.com'
+        clientID: '{clientID}',
+        clientSecret: {clientSecret},
+        callbackURL: "http://my-app.example.com/auth/callback",
+        mockup: {
+            user:{
+                username: 'Mockup User',
+                roles: ['Admin']
+            }
+        }
+    });
