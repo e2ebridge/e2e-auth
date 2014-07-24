@@ -1,0 +1,9 @@
+{
+    "name": "e2e-auth-examples-ressource-server",
+    "version": "0.1.0",
+    "dependencies":{
+        "express": "~4.1.2",
+        "body-parser": "1.0.2",
+        "e2e-auth": "*"
+    }
+}

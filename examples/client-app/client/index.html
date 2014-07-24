@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Application</title>
+    <script src="jquery-1.11.0.min.js"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            $.ajax('user',{
+                type: 'GET',
+                success: function(data){
+                    data = JSON.parse(data);
+                    $('#username').text(data.username);
+                    $('.login-part').hide();
+                },
+                error: function(xhr, status, err){
+                    $('.logout-part').hide();
+                }
+            });
+
+            $("#submitButton").click(function(){
+                var data = {
+                    content: $("#commentTextarea").val()
+                };
+
+                if(data.content){
+                    $.ajax('api/comments',{
+                        type: 'POST',
+                        data: data,
+                        success: function(){
+                            update();
+                        },
+                        error: function(xhr, status, err){
+                            alert(err);
+                        }
+                    });
+                }
+            });
+
+            update();
+
+        });
+
+        function update(){
+            $.ajax("api/comments", {
+                type: 'GET',
+                success: function (res) {
+                    if (typeof res === 'string') {
+                        res = JSON.parse(res);
+                    }
+
+                    $('table.list').empty();
+
+                    $.each(res, function () {
+                        var comment = this;
+
+                        var $row = $('<tr><td>' + comment.content + '</td><td><button class="remove">Remove</button></td></tr>');
+
+                        $row.find('button.remove').click(function(){
+                            $.ajax('api/comments/'+comment.id,{
+                                type: 'DELETE',
+                                success: function(res){
+                                    update();
+                                },
+                                error: function(xhr, status, err){
+                                    alert(err);
+                                }
+                            });
+                        });
+
+                        $('table.list').append($row);
+                    });
+                }
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+
+<div>
+    <h1>Comments</h1>
+    <fieldset>
+        <legend>User</legend>
+        <p class="login-part"><a href="login">Login</a></p>
+        <p class="logout-part"><span style="font-weight: bold;" id="username"></span> <a href="logout">Logout</a></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Comments</legend>
+        <table class="list">
+            <tbody>
+            </tbody>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>New comment</legend>
+        <p><textarea id="commentTextarea"></textarea></p>
+        <p><button id="submitButton">Submit</button></p>
+    </fieldset>
+</div>
+
+</body>
+</html>

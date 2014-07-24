@@ -1,0 +1,12 @@
+{
+    "name": "e2e-auth-demo-client-app",
+    "version": "0.1.0",
+    "main": "index.js",
+    "dependencies":{
+        "express": "~4.1.2",
+        "cookie-parser": "1.0.1",
+        "express-session": "1.0.4",
+        "http-proxy": "0.10.3",
+        "e2e-auth": "*"
+    }
+}
